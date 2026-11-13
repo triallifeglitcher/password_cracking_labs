@@ -22,6 +22,8 @@ Tools Used: Hashcat v8.0.0 & Windows Command Prompt
 Given a 64-character target hash (`c23b8b1c20e225db23488ea0d1429337fd5b0db854eeec19ddb42b908d309000`) and two leaked data files (`passwords.txt` and `usernames.txt`), the goal was to find the correct password and tie the password to the username.
 
 ### Attachments
+![CTF_Problem](./attachments/cdctf-2026/Problem_1_CDCTF_hash.png)
+
 ![Cracked_Password](./attachments/cdctf-2026/Cracked_Hash_(1).png)
 * [Password_Lists](./attachments/cdctf-2026/passwords.txt)
 
