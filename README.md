@@ -21,7 +21,7 @@ Tools Used: Hashcat v8.0.0 & Windows Command Prompt
 
 Given a 64-character target hash (`c23b8b1c20e225db23488ea0d1429337fd5b0db854eeec19ddb42b908d309000`) and two leaked data files (`passwords.txt` and `usernames.txt`), the goal was to find the correct password and tie the password to the username.
 
-### Methodology & Execution
+### Methodology
 1. **Hash Identify:** Used `hashcat --identify` to confirm the hash structure matched **SHA-256 (`-m 1400`)**.
 2. **Strategy:** Attempted a mask brute-force attack (`-a 3`), but realized a 13-character mixed-case password with symbols (`Este4#Healing`) as the targeted password is too large for raw brute force. So change to straight dictionary attack (`-a 0`) using the provided breach passwordlists.
 3. **Cracking & Analysis:**
