@@ -23,9 +23,9 @@ Given a 64-character target hash (`c23b8b1c20e225db23488ea0d1429337fd5b0db854eee
 
 ### Attachments
 ![Cracked_Password](./attachments/cdctf-2026/Cracked_Hash_(1).png)
-*[Password_Lists](./attachments/cdctf-2026/passwords.txt)
+* [Password_Lists](./attachments/cdctf-2026/passwords.txt)
 
-*[User_Lists](./attachments/cdctf-2026/users.txt)
+* [User_Lists](./attachments/cdctf-2026/users.txt)
 
 ### Methodology
 1. **Hash Identify:** Used `hashcat --identify` to confirm the hash structure matched **SHA-256 (`-m 1400`)**.
