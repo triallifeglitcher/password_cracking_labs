@@ -45,4 +45,4 @@ cdctf{CirdanTheShipwright}
 Always analyze the context and provided wordlists before running brute-force attacks. Targeted dictionary attacks (`-a 0`) solve complex passwords in milliseconds when leak data is available.
 
 ### References & Credits
-* Challenge solution approach studied from [dungpmuit's CDCTF-2026 Writeup] [dungpmuit's CDCTF-2026 Writeup](https://github.com/dungpmuit/WriteupCTF/tree/main/CDCTF-2026/HAT/You%20Shall%20not%20Pass!)).
+* Challenge solution approach studied from [dungpmuit's CDCTF-2026 Writeup] [dungpmuit's CDCTF-2026 Writeup](https://github.com/dungpmuit/WriteupCTF/tree/main/CDCTF-2026/HAT/You%20Shall%20not%20Pass!).
