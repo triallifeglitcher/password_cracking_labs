@@ -49,12 +49,12 @@ cdctf{CirdanTheShipwright}
 Always analyze the context and provided wordlists before running brute-force attacks. Targeted dictionary attacks (`-a 0`) solve complex passwords in milliseconds when leak data is available.
 
 ### References & Credits
-* Challenge solution approach studied from [dungpmuit's CDCTF-2026 Writeup] [dungpmuit's CDCTF-2026 Writeup](https://github.com/dungpmuit/WriteupCTF/tree/main/CDCTF-2026/HAT/You%20Shall%20not%20Pass!).
+* Challenge solution approach studied from [dungpmuit's CDCTF-2026 Writeup](https://github.com/dungpmuit/WriteupCTF/tree/main/CDCTF-2026/HAT/You%20Shall%20not%20Pass!).
 
 ---
 
 ## `.zip` extraction lab
-* **Objective:** Retrieve encrypted metadata from a password-secured `. zip` file, access the main document, and restore a lost inner password hash.
+* **Objective:** Retrieve encrypted metadata from a password-secured `.zip` file, access the main document, and restore a lost inner password hash.
 * **Tools:** `zip2john.exe` (John the Ripper Jumbo), `Hashcat v8.0.0`
 
 ## Attachments
@@ -71,15 +71,19 @@ Always analyze the context and provided wordlists before running brute-force att
 ![Hash_Cracked](./attachments/password-zipped-hashing/Cracked_hash.png)
 
 
-### Execution & Troubleshooting
+### Methodology
 1. **Hash Extraction:** Used `zip2john.exe` to extract the archive metadata into a text file (`fourth_cracking.zip > cracked_hash_fourth.txt`) and cleaned the filename prefix so the string started cleanly with `$pkzip2$`. Using the code below to extract the archive
 ```
 zip2john.exe D:\hashing\files\fourth_cracking.zip > D:\hashing\cracked_hash\cracked_hash_fourth
 ```
 2. **Identify:** By running `hashcat --identify` to pinpoint the exact PKZIP variant (`-m 17210`) and cracked the outer archive password, revealing the password of the zip file.
-3. **Hash Recovery:** Extracted the hash file from the unzipped folder. After a quick dictionary + `best66.rule` check exhausted, move to an incremental custom mask attack:
+3. **Zip Password Recovery:** Using the code below to recover the zip password recovery
 ```cmd
-hashcat -m 17210 -a 3 -i --increment-min 1 --increment-max 6 -1 ?l?u?d?s "7be28c82d4aa71f3f51907395fdce6e1" ?1?1?1?1?1?1 --force
+hashcat -m 17210 -a 0 D:\hashing\cracked_hash\cracked_hash_fourth D:\hashing\files\rockyou.txt --force
+```
+4. **Hash Recovery:** Extracted the hash file from the unzipped folder. After a quick dictionary + `best66.rule` check exhausted, move to an incremental custom mask attack:
+```cmd
+hashcat -m 0 -a 3 -i --increment-min 1 --increment-max 6 -1 ?l?u?d?s "7be28c82d4aa71f3f51907395fdce6e1" ?1?1?1?1?1?1 --force
 ```
 * **Key Takeaway:** Consistently check the specific archive compression types using `--identify` prior to attempting to extract.
 
