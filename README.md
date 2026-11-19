@@ -58,10 +58,18 @@ Always analyze the context and provided wordlists before running brute-force att
 * **Tools:** `zip2john.exe` (John the Ripper Jumbo), `Hashcat v8.0.0`
 
 ## Attachments
+* **Extracted Archive**
 ![Extracted archive](./attachments/password-zipped-hashing/Extracted_Archive.png)
+
+* **Identify the zip**
 ![Identify_Zip](./attachments/password-zipped-hashing/Identify_zip.png)
+
+* **The zip password**
 ![Zip_Password_Cracked](./attachments/password-zipped-hashing/zip_password_cracked.png)
+
+* **The hash**
 ![Hash_Cracked](./attachments/password-zipped-hashing/Cracked_hash.png)
+
 
 ### Execution & Troubleshooting
 1. **Hash Extraction:** Used `zip2john.exe` to extract the archive metadata into a text file (`fourth_cracking.zip > cracked_hash_fourth.txt`) and cleaned the filename prefix so the string started cleanly with `$pkzip2$`. Using the code below to extract the archive
