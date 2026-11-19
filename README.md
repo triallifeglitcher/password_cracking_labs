@@ -8,6 +8,8 @@ Actions: Verified hardware configuration utilizing an AMD GPU via OpenCL at 29,0
 
 Takeaways: Evaluated combinatoric keyspace limits. Identified the requirement rules for identifying hash formats ('-m') and tracking boundary characters prior to executing brute-force operations.
 
+---
+
 ## Featured CTF Upsolves
 ### CDCTF 2026 — You Shall Not Pass! (Password Cracking)
 
@@ -48,3 +50,7 @@ Always analyze the context and provided wordlists before running brute-force att
 
 ### References & Credits
 * Challenge solution approach studied from [dungpmuit's CDCTF-2026 Writeup] [dungpmuit's CDCTF-2026 Writeup](https://github.com/dungpmuit/WriteupCTF/tree/main/CDCTF-2026/HAT/You%20Shall%20not%20Pass!).
+
+---
+
+#
